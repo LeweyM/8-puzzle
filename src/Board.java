@@ -30,21 +30,30 @@ public class Board {
     public int hamming() {
         int hammingCount = 0;
         for (int col = 0; col < b.length; col++) {
-            int[] column = b[col];
-            for (int row = 0; row < column.length; row++) {
-                int cell = column[row];
-                int desiredIndex = col * dimension() + row + 1;
-                if (desiredIndex == dimension()*dimension()) desiredIndex = 0;
-                if (cell != desiredIndex) hammingCount++;
+            for (int row = 0; row < b[col].length; row++) {
+                int tileValue = b[col][row];
+                if (tileValue != goal(col, row)) hammingCount++;
             }
         }
-
         return hammingCount;
     }
 
-//    // sum of Manhattan distances between tiles and goal
-//    public int manhattan()
-//
+    // sum of Manhattan distances between tiles and goal
+    public int manhattan() {
+        int totalDistance = 0;
+        for (int col = 0; col < dimension(); col++) {
+            for (int row = 0; row < dimension(); row++) {
+                int tileGoal = goal(col, row);
+                int tileValue = b[col][row];
+                if (tileValue != tileGoal) {
+                    int destinationIndex = find(tileValue);
+                    totalDistance += distance(toCol(destinationIndex), toRow(destinationIndex), col, row);
+                }
+            }
+        }
+        return totalDistance;
+    }
+
 //    // is this board the goal board?
 //    public boolean isGoal()
 //
@@ -60,4 +69,38 @@ public class Board {
 //    // unit testing (not graded)
 //    public static void main(String[] args)
 
+    private int distance(int col, int row, int toCol, int toRow) {
+        return Math.abs(col - toCol) + Math.abs(row - toRow);
+    }
+
+    private int toRow(int i) {
+        return i / dimension();
+    }
+
+    private int toCol(int i) {
+        return i % dimension();
+    }
+
+    private int goal(int col, int row) {
+        return isLastTile(col, row)
+                ? 0
+                : getIndex(col, row) + 1;
+    }
+
+    private int find(int value) {
+        for (int col = 0; col < dimension(); col++) {
+            for (int row = 0; row < dimension(); row++) {
+                if (b[col][row] == value) return getIndex(col, row);
+            }
+        }
+        return value;
+    }
+
+    private int getIndex(int col, int row) {
+        return col * dimension() + row;
+    }
+
+    private boolean isLastTile(int col, int row) {
+        return col == dimension()-1 && row == dimension()-1;
+    }
 }

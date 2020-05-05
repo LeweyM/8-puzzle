@@ -18,7 +18,7 @@ class BoardTest {
         });
 
         inprogressBoard = new Board(new int[][] {
-                new int[]{2,1,3},
+                new int[]{3,2,1},
                 new int[]{4,5,6},
                 new int[]{7,0,8}
         });
@@ -38,5 +38,11 @@ class BoardTest {
     void hamming() {
         assertEquals(0, finishedBoard.hamming());
         assertEquals(4, inprogressBoard.hamming());
+    }
+
+    @Test
+    void manhattanDistance() {
+        assertEquals(0, finishedBoard.manhattan());
+        assertEquals(6, inprogressBoard.manhattan());
     }
 }
