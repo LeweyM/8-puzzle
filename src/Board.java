@@ -88,17 +88,22 @@ public class Board {
         return neighbors;
     }
 
+    // a board that is obtained by exchanging any pair of tiles
+    public Board twin() {
+        return swap(0,0, dimension()-1, dimension()-1);
+    }
+
+    //private functions
+
     private Board swap(int col, int row, int col2, int row2) {
-        int[][] tilesClone = Arrays.stream(this.b).map(int[]::clone).toArray(int[][]::new);
+        int[][] tilesClone = cloneBoard();
         swap(tilesClone, col, row, col2, row2);
         return new Board(tilesClone);
     }
-//
-//    // a board that is obtained by exchanging any pair of tiles
-//    public Board twin()
-//
-//    // unit testing (not graded)
-//    public static void main(String[] args)
+
+    private int[][] cloneBoard() {
+        return Arrays.stream(this.b).map(int[]::clone).toArray(int[][]::new);
+    }
 
     private void swap(int[][] board, int col, int row, int col2, int row2) {
         int temp = board[row][col];

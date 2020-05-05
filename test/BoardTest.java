@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -92,5 +91,11 @@ class BoardTest {
 
         assertEquals(3, neighborList.size());
         assertThat(neighborList, containsInAnyOrder(leftNeighbor, upNeighbor, rightNeighbor));
+    }
+
+    @Test
+    void twin() {
+        Board twin = finishedBoard.twin();
+        assertEquals(2, twin.hamming());
     }
 }
