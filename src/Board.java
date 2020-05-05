@@ -55,7 +55,14 @@ public class Board {
     }
 
 //    // is this board the goal board?
-//    public boolean isGoal()
+    public boolean isGoal() {
+        for (int col = 0; col < b.length; col++) {
+            for (int row = 0; row < b[col].length; row++) {
+                if (b[col][row] != goal(col, row)) return false;
+            }
+        }
+        return true;
+    }
 //
 //    // does this board equal y?
 //    public boolean equals(Object y)

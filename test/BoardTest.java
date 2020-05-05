@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
 
@@ -44,5 +43,11 @@ class BoardTest {
     void manhattanDistance() {
         assertEquals(0, finishedBoard.manhattan());
         assertEquals(6, inprogressBoard.manhattan());
+    }
+
+    @Test
+    void isGoal() {
+        assertTrue(finishedBoard.isGoal());
+        assertFalse(inprogressBoard.isGoal());
     }
 }

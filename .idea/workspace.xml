@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="274be4ad-36ce-487f-86c7-3cff5f6f8f4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoardTest.java" afterDir="false" />
     </list>
@@ -119,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588672236850</updated>
-      <workItem from="1588672241594" duration="6310000" />
+      <workItem from="1588672241594" duration="6663000" />
     </task>
     <servers />
   </component>
@@ -142,22 +141,22 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675053824" />
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588684358226">
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588684641849">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684358226" />
-    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588684358224">
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684641849" />
+    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588684641847">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684358224" />
-    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588684358223">
+    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684641847" />
+    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588684641845">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684358223" />
-    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588684358225">
+    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684641845" />
+    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588684641848">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684358225" />
+    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588684641848" />
     <state width="1920" height="384" key="GridCell.Tab.1.bottom" timestamp="1588684220166">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -198,16 +197,5 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2378" y="314" width="524" height="456" key="extract.method.dialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588683933146" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Board.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
