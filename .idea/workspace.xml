@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="274be4ad-36ce-487f-86c7-3cff5f6f8f4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/8puzzle/Board.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/8puzzle/BoardTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/BoardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/8puzzle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/8puzzle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BoardTest.hamming">
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="8puzzle" />
       <option name="PACKAGE_NAME" value="" />
@@ -83,8 +77,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BoardTest.hamming" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="8puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BoardTest" />
+      <option name="METHOD_NAME" value="hamming" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardTest.hamming" />
         <item itemvalue="JUnit.BoardTest" />
       </list>
     </recent_temporary>
@@ -102,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588672236850</updated>
-      <workItem from="1588672241594" duration="1963000" />
+      <workItem from="1588672241594" duration="2815000" />
     </task>
     <servers />
   </component>
@@ -121,26 +126,42 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588673852730">
+    <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588675053824">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588673852730" />
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588673808596">
+    <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675053824" />
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588675217522">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588673808596" />
-    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588673808593">
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675217522" />
+    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588675217520">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588673808593" />
-    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588673808592">
+    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675217520" />
+    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588675217518">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588673808592" />
-    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588673808594">
+    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675217518" />
+    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588675217521">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588673808594" />
+    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675217521" />
+    <state width="1920" height="384" key="GridCell.Tab.1.bottom" timestamp="1588675204447">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="384" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675204447" />
+    <state width="1920" height="384" key="GridCell.Tab.1.center" timestamp="1588675204445">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="384" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675204445" />
+    <state width="1920" height="384" key="GridCell.Tab.1.left" timestamp="1588675204444">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="384" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675204444" />
+    <state width="1920" height="384" key="GridCell.Tab.1.right" timestamp="1588675204446">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="384" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675204446" />
     <state x="2128" y="121" key="SettingsEditor" timestamp="1588672455508">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -157,5 +178,16 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2419" y="274" key="com.intellij.testIntegration.createTest.CreateTestDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588672476440" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

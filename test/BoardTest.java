@@ -6,20 +6,37 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BoardTest {
 
-    private Board board;
+    private Board finishedBoard;
+    private Board inprogressBoard;
 
     @BeforeEach
     void setUp() {
-        board = new Board(new int[][] {
+        finishedBoard = new Board(new int[][] {
                 new int[]{1,2,3},
                 new int[]{4,5,6},
                 new int[]{7,8,0}
+        });
+
+        inprogressBoard = new Board(new int[][] {
+                new int[]{2,1,3},
+                new int[]{4,5,6},
+                new int[]{7,0,8}
         });
     }
 
     @Test
     public void boardTest() {
-        assertEquals(board.toString(), "3\n1 2 3\n4 5 6\n7 8 0");
+        assertEquals("3\n1 2 3\n4 5 6\n7 8 0", finishedBoard.toString());
     }
 
+    @Test
+    void dimension() {
+        assertEquals(3, finishedBoard.dimension());
+    }
+
+    @Test
+    void hamming() {
+        assertEquals(0, finishedBoard.hamming());
+        assertEquals(4, inprogressBoard.hamming());
+    }
 }

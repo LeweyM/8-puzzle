@@ -21,12 +21,27 @@ public class Board {
         return sb.toString();
     }
 
-//    // board dimension n
-//    public int dimension() {}
-//
+    // board dimension n
+    public int dimension() {
+        return b.length;
+    }
+
 //    // number of tiles out of place
-//    public int hamming() {}
-//
+    public int hamming() {
+        int hammingCount = 0;
+        for (int col = 0; col < b.length; col++) {
+            int[] column = b[col];
+            for (int row = 0; row < column.length; row++) {
+                int cell = column[row];
+                int desiredIndex = col * dimension() + row + 1;
+                if (desiredIndex == dimension()*dimension()) desiredIndex = 0;
+                if (cell != desiredIndex) hammingCount++;
+            }
+        }
+
+        return hammingCount;
+    }
+
 //    // sum of Manhattan distances between tiles and goal
 //    public int manhattan()
 //
