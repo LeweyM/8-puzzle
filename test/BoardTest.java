@@ -50,4 +50,17 @@ class BoardTest {
         assertTrue(finishedBoard.isGoal());
         assertFalse(inprogressBoard.isGoal());
     }
+
+    @Test
+    void equals() {
+        Board otherBoard = new Board(new int[][] {
+                new int[]{1,2,3},
+                new int[]{4,5,6},
+                new int[]{7,8,0}
+        });
+
+        assertEquals(finishedBoard, otherBoard);
+        assertNotEquals(finishedBoard, otherBoard.toString());
+        assertNotEquals(finishedBoard, inprogressBoard);
+    }
 }

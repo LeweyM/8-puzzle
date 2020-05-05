@@ -63,10 +63,12 @@ public class Board {
         }
         return true;
     }
-//
-//    // does this board equal y?
-//    public boolean equals(Object y)
-//
+
+    // does this board equal y?
+    public boolean equals(Object y) {
+        return y instanceof Board && y.toString().equals(toString());
+    }
+
 //    // all neighboring boards
 //    public Iterable<Board> neighbors()
 //
