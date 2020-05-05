@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Board {
@@ -26,7 +27,7 @@ public class Board {
         return b.length;
     }
 
-//    // number of tiles out of place
+    //    // number of tiles out of place
     public int hamming() {
         int hammingCount = 0;
         for (int col = 0; col < b.length; col++) {
@@ -46,7 +47,7 @@ public class Board {
                 int tileGoal = goal(col, row);
                 int tileValue = b[col][row];
                 if (tileValue != tileGoal) {
-                    int destinationIndex = find(tileValue);
+                    int destinationIndex = findIndexOf(tileValue);
                     totalDistance += distance(toCol(destinationIndex), toRow(destinationIndex), col, row);
                 }
             }
@@ -54,7 +55,7 @@ public class Board {
         return totalDistance;
     }
 
-//    // is this board the goal board?
+    //    // is this board the goal board?
     public boolean isGoal() {
         for (int col = 0; col < b.length; col++) {
             for (int row = 0; row < b[col].length; row++) {
@@ -66,17 +67,44 @@ public class Board {
 
     // does this board equal y?
     public boolean equals(Object y) {
-        return y instanceof Board && y.toString().equals(toString());
+        return y instanceof Board
+                && ((Board) y).dimension() == dimension()
+                && y.toString().equals(toString());
     }
 
-//    // all neighboring boards
-//    public Iterable<Board> neighbors()
+    // all neighboring boards
+    public Iterable<Board> neighbors() {
+        ArrayList<Board> neighbors = new ArrayList<>();
+
+        int emptyTileIndex = findIndexOf(0);
+        int col = toCol(emptyTileIndex);
+        int row = toRow(emptyTileIndex);
+
+        if (col + 1 < dimension())  neighbors.add(swap(col, row, col + 1, row));
+        if (col - 1 >= 0)           neighbors.add(swap(col, row, col - 1, row));
+        if (row + 1 < dimension())  neighbors.add(swap(col, row, col, row + 1));
+        if (row - 1 >= 0)           neighbors.add(swap(col, row, col, row - 1));
+
+        return neighbors;
+    }
+
+    private Board swap(int col, int row, int col2, int row2) {
+        int[][] tilesClone = Arrays.stream(this.b).map(int[]::clone).toArray(int[][]::new);
+        swap(tilesClone, col, row, col2, row2);
+        return new Board(tilesClone);
+    }
 //
 //    // a board that is obtained by exchanging any pair of tiles
 //    public Board twin()
 //
 //    // unit testing (not graded)
 //    public static void main(String[] args)
+
+    private void swap(int[][] board, int col, int row, int col2, int row2) {
+        int temp = board[row][col];
+        board[row][col] = board[row2][col2];
+        board[row2][col2] = temp;
+    }
 
     private int distance(int col, int row, int toCol, int toRow) {
         return Math.abs(col - toCol) + Math.abs(row - toRow);
@@ -96,7 +124,7 @@ public class Board {
                 : getIndex(col, row) + 1;
     }
 
-    private int find(int value) {
+    private int findIndexOf(int value) {
         for (int col = 0; col < dimension(); col++) {
             for (int row = 0; row < dimension(); row++) {
                 if (b[col][row] == value) return getIndex(col, row);
@@ -110,6 +138,6 @@ public class Board {
     }
 
     private boolean isLastTile(int col, int row) {
-        return col == dimension()-1 && row == dimension()-1;
+        return col == dimension() - 1 && row == dimension() - 1;
     }
 }

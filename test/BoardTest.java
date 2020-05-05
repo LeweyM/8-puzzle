@@ -1,6 +1,11 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
@@ -62,5 +67,30 @@ class BoardTest {
         assertEquals(finishedBoard, otherBoard);
         assertNotEquals(finishedBoard, otherBoard.toString());
         assertNotEquals(finishedBoard, inprogressBoard);
+    }
+
+    @Test
+    void neighbors() {
+        Board rightNeighbor = new Board(new int[][]{
+                new int[]{3, 2, 1},
+                new int[]{4, 5, 6},
+                new int[]{7, 8, 0}
+        });
+        Board upNeighbor = new Board(new int[][]{
+                new int[]{3, 2, 1},
+                new int[]{4, 0, 6},
+                new int[]{7, 5, 8}
+        });
+        Board leftNeighbor = new Board(new int[][]{
+                new int[]{3, 2, 1},
+                new int[]{4, 5, 6},
+                new int[]{0, 7, 8}
+        });
+
+        ArrayList<Board> neighborList = new ArrayList<>();
+        inprogressBoard.neighbors().forEach(neighborList::add);
+
+        assertEquals(3, neighborList.size());
+        assertThat(neighborList, containsInAnyOrder(leftNeighbor, upNeighbor, rightNeighbor));
     }
 }
