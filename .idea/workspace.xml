@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="274be4ad-36ce-487f-86c7-3cff5f6f8f4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BoardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/algs4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Solver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/SolverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8puzzle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/8puzzle.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest">
+  <component name="RunManager" selected="JUnit.SolverTest">
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="8puzzle" />
       <option name="PACKAGE_NAME" value="" />
@@ -107,8 +110,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="8puzzle" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SolverTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SolverTest" />
         <item itemvalue="JUnit.BoardTest" />
         <item itemvalue="JUnit.BoardTest.neighbors" />
         <item itemvalue="JUnit.BoardTest.manhattanDistance" />
@@ -129,7 +142,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588672236850</updated>
-      <workItem from="1588672241594" duration="10930000" />
+      <workItem from="1588672241594" duration="14431000" />
     </task>
     <servers />
   </component>
@@ -152,46 +165,50 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="1780" y="100" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588675053824" />
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588691055602">
+    <state x="2453" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1588756497470">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588691055602" />
-    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588691055599">
+    <state x="2453" y="256" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588756497470" />
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1588757099175">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588691055599" />
-    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588691055598">
+    <state width="1920" height="311" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757099175" />
+    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1588757099174">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588691055598" />
-    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588691055601">
+    <state width="1920" height="311" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757099174" />
+    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1588757099173">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588691055601" />
-    <state width="1920" height="384" key="GridCell.Tab.1.bottom" timestamp="1588690736061">
+    <state width="1920" height="311" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757099173" />
+    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1588757099174">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="384" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588690736061" />
-    <state width="1920" height="384" key="GridCell.Tab.1.center" timestamp="1588690736059">
+    <state width="1920" height="311" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757099174" />
+    <state width="1920" height="384" key="GridCell.Tab.1.bottom" timestamp="1588757093053">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="384" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588690736059" />
-    <state width="1920" height="384" key="GridCell.Tab.1.left" timestamp="1588690736058">
+    <state width="1920" height="384" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757093053" />
+    <state width="1920" height="384" key="GridCell.Tab.1.center" timestamp="1588757093051">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="384" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588690736058" />
-    <state width="1920" height="384" key="GridCell.Tab.1.right" timestamp="1588690736060">
+    <state width="1920" height="384" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757093051" />
+    <state width="1920" height="384" key="GridCell.Tab.1.left" timestamp="1588757093050">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="384" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588690736060" />
+    <state width="1920" height="384" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757093050" />
+    <state width="1920" height="384" key="GridCell.Tab.1.right" timestamp="1588757093052">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="384" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588757093052" />
     <state x="2446" y="465" key="ReplaceDuplicatesPrompt" timestamp="1588683133915">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2446" y="465" key="ReplaceDuplicatesPrompt/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588683133915" />
-    <state x="2128" y="121" key="SettingsEditor" timestamp="1588688183942">
+    <state x="2128" y="121" key="SettingsEditor" timestamp="1588756272027">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2128" y="121" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588688183942" />
+    <state x="2128" y="121" key="SettingsEditor/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588756272027" />
     <state x="2352" y="441" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588688180360">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
@@ -204,10 +221,10 @@
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2419" y="274" key="com.intellij.testIntegration.createTest.CreateTestDialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588672476440" />
-    <state x="2378" y="314" width="524" height="456" key="extract.method.dialog" timestamp="1588691074195">
+    <state x="2378" y="314" width="524" height="456" key="extract.method.dialog" timestamp="1588693090323">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state x="2378" y="314" width="524" height="456" key="extract.method.dialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588691074195" />
+    <state x="2378" y="314" width="524" height="456" key="extract.method.dialog/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1588693090323" />
     <state x="2305" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1588685239433">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
