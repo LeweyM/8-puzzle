@@ -4,10 +4,12 @@ import java.util.Arrays;
 public class Board {
 
     private final int[][] b;
+    private int cachedManhattan;
 
     // create a board from an n-by-n array of tiles,
     // where tiles[row][col] = tile at (row, col)
     public Board(int[][] tiles) {
+        cachedManhattan = -1;
         b = tiles;
     }
 
@@ -41,6 +43,8 @@ public class Board {
 
     // sum of Manhattan distances between tiles and goal
     public int manhattan() {
+        if (hasCached()) return cachedManhattan;
+
         int totalDistance = 0;
         for (int col = 0; col < dimension(); col++) {
             for (int row = 0; row < dimension(); row++) {
@@ -52,7 +56,12 @@ public class Board {
                 }
             }
         }
+        cachedManhattan = totalDistance;
         return totalDistance;
+    }
+
+    private boolean hasCached() {
+        return cachedManhattan > -1;
     }
 
     //    // is this board the goal board?

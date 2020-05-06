@@ -56,7 +56,7 @@ class SolverTest {
                 new int[]{4, 5, 0},
                 new int[]{7, 8, 6},
         });
-        Board step4 = new Board(new int[][]{
+        Board goal = new Board(new int[][]{
                 new int[]{1, 2, 3},
                 new int[]{4, 5, 6},
                 new int[]{7, 8, 0},
@@ -65,6 +65,6 @@ class SolverTest {
         ArrayList<Board> solutionSteps = new ArrayList<>();
         solver.solution().forEach(solutionSteps::add);
 
-        assertThat(solutionSteps, contains(board, step1, step2, step3, step4));
+        assertThat(solutionSteps, contains(board, step1, step2, step3, goal));
     }
 }

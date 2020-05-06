@@ -35,24 +35,15 @@ public class Solver {
 
     // min number of moves to solve initial board
     public int moves() {
-        int searchDepth = 0;
-        MinPQ<Board> pq = new MinPQ<>(Comparator.comparingInt(Board::manhattan));
-        pq.insert(root);
-        Board board = pq.delMin();
-
-        HashSet<String> visited = new HashSet<>();
-
-        while(!board.isGoal()) {
-            visitNeighbors(pq, visited, board);
-            board = pq.delMin();
-            searchDepth++;
-        }
-
-        return searchDepth;
+        return fastestGameTreePath().size() - 1;
     }
 
 //    // sequence of boards in a shortest solution
     public Iterable<Board> solution() {
+        return fastestGameTreePath();
+    }
+
+    private List<Board> fastestGameTreePath() {
         MinPQ<Board> pq = new MinPQ<>(Comparator.comparingInt(Board::manhattan));
         pq.insert(root);
         Board board = pq.delMin();
@@ -78,12 +69,12 @@ public class Solver {
         }
 
         ArrayList<Board> steps = new ArrayList<>();
-        while (!stepStack.isEmpty()) {
-            steps.add(stepStack.pop());
-        }
+
+        stepStack.iterator().forEachRemaining(steps::add);
         steps.add(board);
 
         return steps;
+
     }
 
     private boolean notVisited(HashMap<String, Board> rootMap, Board b) {
