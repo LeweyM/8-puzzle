@@ -1,7 +1,6 @@
 import edu.princeton.cs.algs4.MinPQ;
 
-import java.util.Comparator;
-import java.util.HashSet;
+import java.util.*;
 
 public class Solver {
     private final Board root;
@@ -53,7 +52,43 @@ public class Solver {
     }
 
 //    // sequence of boards in a shortest solution
-//    public Iterable<Board> solution()
+    public Iterable<Board> solution() {
+        MinPQ<Board> pq = new MinPQ<>(Comparator.comparingInt(Board::manhattan));
+        pq.insert(root);
+        Board board = pq.delMin();
+        HashMap<String, Board> rootMap = new HashMap<>();
+        rootMap.put(board.toString(), null);
+
+        while(!board.isGoal()) {
+            for (Board neighbor : board.neighbors()) {
+                if (notVisited(rootMap, neighbor)) {
+                    pq.insert(neighbor);
+                }
+            }
+            Board nextBoard = pq.delMin();
+            rootMap.put(nextBoard.toString(), board);
+            board = nextBoard;
+        }
+
+        Deque<Board> stepStack = new ArrayDeque<>();
+        Board parent = rootMap.get(board.toString());
+        while (parent != null) {
+            stepStack.push(parent);
+            parent = rootMap.get(parent.toString());
+        }
+
+        ArrayList<Board> steps = new ArrayList<>();
+        while (!stepStack.isEmpty()) {
+            steps.add(stepStack.pop());
+        }
+        steps.add(board);
+
+        return steps;
+    }
+
+    private boolean notVisited(HashMap<String, Board> rootMap, Board b) {
+        return !rootMap.containsKey(b.toString());
+    }
 
     private void visitNeighbors(MinPQ<Board> pq, HashSet<String> visited, Board board) {
         for (Board neighbor : board.neighbors()) {

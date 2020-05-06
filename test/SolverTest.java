@@ -1,6 +1,10 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SolverTest {
@@ -33,5 +37,34 @@ class SolverTest {
         solver = new Solver(unsolvableBoard);
 
         assertFalse(solver.isSolvable());
+    }
+
+    @Test
+    void solution() {
+        Board step1 = new Board(new int[][]{
+                new int[]{1, 0, 3},
+                new int[]{4, 2, 5},
+                new int[]{7, 8, 6},
+        });
+        Board step2 = new Board(new int[][]{
+                new int[]{1, 2, 3},
+                new int[]{4, 0, 5},
+                new int[]{7, 8, 6},
+        });
+        Board step3 = new Board(new int[][]{
+                new int[]{1, 2, 3},
+                new int[]{4, 5, 0},
+                new int[]{7, 8, 6},
+        });
+        Board step4 = new Board(new int[][]{
+                new int[]{1, 2, 3},
+                new int[]{4, 5, 6},
+                new int[]{7, 8, 0},
+        });
+
+        ArrayList<Board> solutionSteps = new ArrayList<>();
+        solver.solution().forEach(solutionSteps::add);
+
+        assertThat(solutionSteps, contains(board, step1, step2, step3, step4));
     }
 }
