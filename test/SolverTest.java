@@ -19,7 +19,19 @@ class SolverTest {
     }
 
     @Test
-    void solver() {
+    void moves() {
         assertEquals(4, solver.moves());
+    }
+
+    @Test
+    void solvable() {
+        Board unsolvableBoard = new Board(new int[][]{
+                new int[]{1, 2, 3},
+                new int[]{4, 5, 6},
+                new int[]{8, 7, 0},
+        });
+        solver = new Solver(unsolvableBoard);
+
+        assertFalse(solver.isSolvable());
     }
 }
