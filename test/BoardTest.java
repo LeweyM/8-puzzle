@@ -11,6 +11,7 @@ class BoardTest {
 
     private Board finishedBoard;
     private Board inprogressBoard;
+    private Board unorderedBoard;
 
     @BeforeEach
     void setUp() {
@@ -24,6 +25,12 @@ class BoardTest {
                 new int[]{3,2,1},
                 new int[]{4,5,6},
                 new int[]{7,0,8}
+        });
+
+        unorderedBoard = new Board(new int[][] {
+                new int[]{4,3,1},
+                new int[]{7,0,2},
+                new int[]{8,5,6}
         });
     }
 
@@ -46,7 +53,8 @@ class BoardTest {
     @Test
     void manhattanDistance() {
         assertEquals(0, finishedBoard.manhattan());
-        assertEquals(6, inprogressBoard.manhattan());
+        assertEquals(5, inprogressBoard.manhattan());
+        assertEquals(10, unorderedBoard.manhattan());
     }
 
     @Test

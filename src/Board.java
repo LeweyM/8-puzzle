@@ -42,17 +42,20 @@ public class Board {
     }
 
     // sum of Manhattan distances between tiles and goal
+    // don't count the distance of the empty '0' tile
     public int manhattan() {
         if (hasCached()) return cachedManhattan;
 
         int totalDistance = 0;
-        for (int col = 0; col < dimension(); col++) {
-            for (int row = 0; row < dimension(); row++) {
-                int tileGoal = goal(col, row);
-                int tileValue = b[col][row];
-                if (tileValue != tileGoal) {
-                    int destinationIndex = findIndexOf(tileValue);
-                    totalDistance += distance(toCol(destinationIndex), toRow(destinationIndex), col, row);
+        for (int row = 0; row < dimension(); row++) {
+            for (int col = 0; col < dimension(); col++) {
+                int tileGoal = goal(row, col);
+                int tileValue = b[row][col];
+                if (tileValue != 0 && tileValue != tileGoal) {
+                    int goalColumn = toCol(tileValue - 1);
+                    int goalRow = toRow(tileValue - 1);
+                    int distance = distance(col, row, goalColumn, goalRow);
+                    totalDistance += distance;
                 }
             }
         }
