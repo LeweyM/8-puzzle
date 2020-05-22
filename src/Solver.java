@@ -2,9 +2,6 @@ import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.Stack;
 
 import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
-
 
 public class Solver {
     private final Stack<Board> solutionStack;
@@ -39,44 +36,45 @@ public class Solver {
         solutionStack = new Stack<>();
 
         MinPQ<SearchNode> pq = new MinPQ<>(new SearchNodeOrder());
-        pq.insert(new SearchNode(initial, 0, null));
-        Set<String> visited = new HashSet<>();
-        SearchNode node;
+        SearchNode node = new SearchNode(initial, 0, null);
+        pq.insert(node);
 
         MinPQ<SearchNode> twinPq = new MinPQ<>(new SearchNodeOrder());
-        twinPq.insert(new SearchNode(initial.twin(), 0, null));
-        Set<String> twinVisited = new HashSet<>();
-        SearchNode twinNode;
+        SearchNode twinNode = new SearchNode(initial.twin(), 0, null);
+        twinPq.insert(twinNode);
 
         while(true) {
-            node = pq.delMin();
-            for (Board neighbor : node.board.neighbors()) {
-                if (!visited.contains(neighbor.toString())) {
-                    pq.insert(new SearchNode(neighbor, node.moves+1, node));
-                    visited.add(neighbor.toString());
+            if (node.board.isGoal()) {
+                while (node.previous != null) {
+                    solutionStack.push(node.board);
+                    node = node.previous;
                 }
-            }
-            if (node.board.isGoal()) break;
-
-            twinNode = twinPq.delMin();
-            for (Board neighbor : twinNode.board.neighbors()) {
-                if (!twinVisited.contains(neighbor.toString())) {
-                    twinPq.insert(new SearchNode(neighbor, twinNode.moves+1, twinNode));
-                    twinVisited.add(neighbor.toString());
-                }
-            }
-            if (twinNode.board.isGoal()) {
+                solutionStack.push(initial);
+                return;
+            } else if (twinNode.board.isGoal()) {
                 solvable = false;
                 return;
+            } else {
+                for (Board neighbor : node.board.neighbors()) {
+                    if (node.previous == null || !node.previous.board.equals(neighbor)) {
+                        pq.insert(new SearchNode(neighbor, node.moves+1, node));
+                    }
+                }
+
+                for (Board neighbor : twinNode.board.neighbors()) {
+                    if (twinNode.previous == null || !twinNode.previous.board.equals(neighbor)) {
+                        twinPq.insert(new SearchNode(neighbor, twinNode.moves+1, twinNode));
+                    }
+                }
+
+                if (!pq.isEmpty()) {
+                    node = pq.delMin();
+                }
+                if (!twinPq.isEmpty()) {
+                    twinNode = twinPq.delMin();
+                }
             }
         }
-
-        while (node.previous != null) {
-           solutionStack.push(node.board);
-           node = node.previous;
-        }
-        solutionStack.push(initial);
-
     }
 
     // is the initial board solvable? (see below)
@@ -89,7 +87,7 @@ public class Solver {
         return solutionStack.size() - 1;
     }
 
-//    // sequence of boards in a shortest solution
+    // sequence of boards in a shortest solution
     public Iterable<Board> solution() {
         return solvable ? solutionStack : null;
     }
